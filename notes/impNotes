@@ -44,10 +44,23 @@ perform the build.
 -> setup.py: touch setup.py
 Basic details
 
-(3)
+(3) Creating Github Actions
 ./github/workflows/cicd.yml
 This will create the folder: github, subfolder: workflows and file: cicd.yml
 The above directory and file will be responsibe for pushing changes to pypi library
+-> yml/yaml: yet another markup language
+-> A YML file is a text document that contains data formatted using YAML, 
+a human-readable data format used for data serialization. 
+It is used for reading and writing data independent of a specific 
+programming language.
+
+WHAT ARE GITHUB ACTIONS?
+Github Actions enables you to create custom software development lifecycle workflows
+directly in your Github repository. These workflows are made out of different tasks
+so-called actions that can be run automatically on certain events.
+
+(4) Creating token
+https://pypi.org/manage/account/token
 
 
 

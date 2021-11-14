@@ -1,0 +1,46 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+# This is the name of this Github actions
+# key-value pairs
+name: Upload Python Package
+
+# it will execute when changes are push in main branch
+on:
+  push:
+    branches:
+    - main
+
+# it should do the following jobs
+# first, it will deploy and run on latest version of ubuntu with the following STEPS 
+# Step 1: create/set up python environment with python version 3.9 # @v2: version 2
+# Step 2: install dependencies or libraries used (upgrading pip and install build)
+# Step 3: Build package
+# Step 4: Publish package to the pypi library using github actions with token
+# and password
+# We will publish our package to the pypi library by using the the token value
+# that we have created  from PYPI_API_TOKEN. In order to access this, password will
+# be token value stored in secrets
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install build
+      - name: Build package
+        run: python -m build
+      - name: Publish package
+        uses: pypa/gh-action-pypi-publish@27b31702a0e7fc50959f5ad993c78deac1bdfc29
+        with:
+          user: __token__
+          password: ${{ secrets.PYPI_API_TOKEN }}
