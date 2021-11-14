@@ -44,6 +44,11 @@ perform the build.
 -> setup.py: touch setup.py
 Basic details
 
+(3)
+./github/workflows/cicd.yml
+This will create the folder: github, subfolder: workflows and file: cicd.yml
+The above directory and file will be responsibe for pushing changes to pypi library
+
 
 
 
