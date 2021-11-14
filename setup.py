@@ -12,7 +12,7 @@ setuptools.setup(
     author = USER_NAME,
     author_email = "parul3kin@gmail.com",
     description = "It is an implementation of Perceptron",
-    long_description = long_description,
+    long_description = long_description, # long description shows readme.md files 
     long_description_content_type = "text/markdown",
     url = "https://github.com/pypa/sampleproject",
     project_urls = {
